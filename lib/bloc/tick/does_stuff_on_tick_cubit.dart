@@ -29,8 +29,8 @@ class TickCubit extends HydratedCubit<TickState> {
   }
 
   Future<void> doStuff() async {
-    await Future.delayed(const Duration(seconds: 5));
     emit(state.copyWith(counter: state.counter + 1));
+    _controller.add('Tick: ${state.counter}');
   }
 
   @override

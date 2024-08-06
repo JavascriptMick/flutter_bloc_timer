@@ -21,7 +21,6 @@ StuffState _$StuffStateFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$StuffState {
   List<String> get stuff => throw _privateConstructorUsedError;
-  int get counter => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -35,7 +34,7 @@ abstract class $StuffStateCopyWith<$Res> {
           StuffState value, $Res Function(StuffState) then) =
       _$StuffStateCopyWithImpl<$Res, StuffState>;
   @useResult
-  $Res call({List<String> stuff, int counter});
+  $Res call({List<String> stuff});
 }
 
 /// @nodoc
@@ -52,17 +51,12 @@ class _$StuffStateCopyWithImpl<$Res, $Val extends StuffState>
   @override
   $Res call({
     Object? stuff = null,
-    Object? counter = null,
   }) {
     return _then(_value.copyWith(
       stuff: null == stuff
           ? _value.stuff
           : stuff // ignore: cast_nullable_to_non_nullable
               as List<String>,
-      counter: null == counter
-          ? _value.counter
-          : counter // ignore: cast_nullable_to_non_nullable
-              as int,
     ) as $Val);
   }
 }
@@ -75,7 +69,7 @@ abstract class _$$StuffStateImplCopyWith<$Res>
       __$$StuffStateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({List<String> stuff, int counter});
+  $Res call({List<String> stuff});
 }
 
 /// @nodoc
@@ -90,17 +84,12 @@ class __$$StuffStateImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? stuff = null,
-    Object? counter = null,
   }) {
     return _then(_$StuffStateImpl(
       stuff: null == stuff
           ? _value._stuff
           : stuff // ignore: cast_nullable_to_non_nullable
               as List<String>,
-      counter: null == counter
-          ? _value.counter
-          : counter // ignore: cast_nullable_to_non_nullable
-              as int,
     ));
   }
 }
@@ -108,9 +97,7 @@ class __$$StuffStateImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$StuffStateImpl implements _StuffState {
-  const _$StuffStateImpl(
-      {required final List<String> stuff, required this.counter})
-      : _stuff = stuff;
+  const _$StuffStateImpl({required final List<String> stuff}) : _stuff = stuff;
 
   factory _$StuffStateImpl.fromJson(Map<String, dynamic> json) =>
       _$$StuffStateImplFromJson(json);
@@ -124,11 +111,8 @@ class _$StuffStateImpl implements _StuffState {
   }
 
   @override
-  final int counter;
-
-  @override
   String toString() {
-    return 'StuffState(stuff: $stuff, counter: $counter)';
+    return 'StuffState(stuff: $stuff)';
   }
 
   @override
@@ -136,14 +120,13 @@ class _$StuffStateImpl implements _StuffState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$StuffStateImpl &&
-            const DeepCollectionEquality().equals(other._stuff, _stuff) &&
-            (identical(other.counter, counter) || other.counter == counter));
+            const DeepCollectionEquality().equals(other._stuff, _stuff));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(_stuff), counter);
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_stuff));
 
   @JsonKey(ignore: true)
   @override
@@ -160,17 +143,14 @@ class _$StuffStateImpl implements _StuffState {
 }
 
 abstract class _StuffState implements StuffState {
-  const factory _StuffState(
-      {required final List<String> stuff,
-      required final int counter}) = _$StuffStateImpl;
+  const factory _StuffState({required final List<String> stuff}) =
+      _$StuffStateImpl;
 
   factory _StuffState.fromJson(Map<String, dynamic> json) =
       _$StuffStateImpl.fromJson;
 
   @override
   List<String> get stuff;
-  @override
-  int get counter;
   @override
   @JsonKey(ignore: true)
   _$$StuffStateImplCopyWith<_$StuffStateImpl> get copyWith =>

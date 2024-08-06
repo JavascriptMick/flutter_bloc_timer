@@ -8,15 +8,14 @@ class StuffCubit extends HydratedCubit<StuffState> {
   final TickCubit tickCubit;
   late StreamSubscription<String> _tickSubscription;
 
-  StuffCubit(this.tickCubit) : super(const StuffState(stuff: [], counter: 0)) {
+  StuffCubit(this.tickCubit) : super(const StuffState(stuff: [])) {
     _tickSubscription = tickCubit.stuffStream.listen((stuff) {
       doStuff(stuff);
     });
   }
 
   Future<void> doStuff(String stuff) async {
-    emit(state
-        .copyWith(stuff: [...state.stuff, stuff], counter: state.counter + 1));
+    emit(state.copyWith(stuff: [...state.stuff, stuff]));
   }
 
   @override

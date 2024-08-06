@@ -7,8 +7,7 @@ part 'stuff_state.g.dart';
 
 @freezed
 class StuffState with _$StuffState {
-  const factory StuffState(
-      {required List<String> stuff, required int counter}) = _StuffState;
+  const factory StuffState({required List<String> stuff}) = _StuffState;
 
   factory StuffState.fromJson(Map<String, Object?> json) =>
       _$StuffStateFromJson(json);
